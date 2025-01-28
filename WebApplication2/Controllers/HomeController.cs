@@ -32,5 +32,11 @@ namespace WebApplication2.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public IActionResult NewsLetterSignUp(string email)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

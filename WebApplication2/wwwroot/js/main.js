@@ -130,12 +130,12 @@
 /*----------------------------------------
 	03. Mail Chimp
 ------------------------------------------*/
-    $('#mc-form').ajaxChimp({
-        language: 'en',
-        callback: mailChimpResponse,
-        // ADD YOUR MAILCHIMP URL BELOW HERE!
-        url: 'http://themepure.us14.list-manage.com/subscribe/post?u=5b0af3eccc324cd420b6ae5e5&amp;id=946818c446'
-    });
+    //$('#mc-form').ajaxChimp({
+    //    language: 'en',
+    //    callback: mailChimpResponse,
+    //    // ADD YOUR MAILCHIMP URL BELOW HERE!
+    //    url: 'http://themepure.us14.list-manage.com/subscribe/post?u=5b0af3eccc324cd420b6ae5e5&amp;id=946818c446'
+    //});
     
     function mailChimpResponse(resp) {
         
