@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-12">
                     <div class="logo">
-                        <a href="index.html"><img src="img/logo/logo.png" alt="HotelATR"></a>
+                        <a href="index.html"><img src="~/img/logo/logo.png" alt="HotelATR"></a>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-8 col-sm-8 hidden-xs">
@@ -50,13 +50,13 @@
                         </div>
                     </div>
                     <!-- Mainmenu Start -->
-                    @Html.RenderPartialAsync("TopMenu")
+                    @Html.Partial("TopMenu")
                     <!-- Mainmenu End -->
                 </div>
             </div>
         </div>
         <!-- Mobile Menu Area start -->
-        @Html.RenderPartialAsync("MobileTopMenu")
+        @Html.Partial("MobileTopMenu")
         <!-- Mobile Menu Area end -->
     </header>
     <!-- Header Area End -->
@@ -178,7 +178,6 @@
         <!-- Footer Bottom Area End -->
     </footer>
     <!-- Footer Area End -->
-
 
     <!-- All js here -->
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>

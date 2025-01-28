@@ -18,8 +18,18 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-       public IActionResult Contact()
+        public IActionResult Contact()
         {
+            return View();
+        }
+
+        [HttpPost]
+        //public IActionResult SendMessage(string name, string email, string message)
+        public IActionResult SendMessage(Message userMessage)
+        {
+            var data = Request.Form;
+            ///TODO write to db
+
             return View();
         }
     }
