@@ -16,13 +16,9 @@
     <link rel="stylesheet" href="~/css/shortcode/shortcodes.css">
     <link rel="stylesheet" href="~/style.css">
     <link rel="stylesheet" href="~/css/responsive.css">
-    
-    @RenderSection("Styles", false)
-
     <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -32,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-12">
                     <div class="logo">
-                        <a href="index.html"><img src="img/logo/logo.png" alt="HotelATR"></a>
+                        <a href="index.html"><img src="~/img/logo/logo.png" alt="HotelATR"></a>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-8 col-sm-8 hidden-xs">
@@ -60,26 +56,50 @@
         <!-- Mobile Menu Area end -->
     </header>
     <!-- Header Area End -->
-    <!-- Breadcrumb Area Start-->
-    <section class="breadcrumb-area overlay-dark-2 bg-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="breadcrumb-text text-center">
-                        <h2>Contact Us</h2>
-                        <p>A quality room of hotel ATR with sea or mountain view</p>
-                        <div class="breadcrumb-bar">
-                            <ul class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
-                                <li>Contact Us</li>
-                            </ul>
+    <!-- Background Area Start -->
+    <section class="slider-area">
+        <div class="slider-wrapper">
+            <div class="single-slide" style="background-image: url('img/slider/1.jpg');">
+                <div class="banner-content overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="text-content-wrapper">
+                                    <div class="text-content text-center">
+                                        <h1 class="pt-180">welcome to hotel atr</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <div class="banner-btn">
+                                            <a class="default-btn" href="room-grid.html">explore</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide" style="background-image: url('img/slider/2.jpg');">
+                <div class="banner-content overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="text-content-wrapper slide-two">
+                                    <div class="text-content text-center">
+                                        <h1 class="pt-180">welcome to hotel atr</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <div class="banner-btn">
+                                            <a class="default-btn" href="room-grid.html">explore</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Area End -->
+    <!-- Background Area End -->
 
     @RenderBody()
 
@@ -179,7 +199,6 @@
     </footer>
     <!-- Footer Area End -->
 
-
     <!-- All js here -->
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
@@ -193,9 +212,6 @@
     <script src="~/js/imagesloaded.pkgd.min.js"></script>
     <script src="~/js/jquery.magnific-popup.js"></script>
     <script src="~/js/plugins.js"></script>
-
-    @RenderSection("Scripts", false)
-
     <script src="~/js/main.js"></script>
 </body>
 </html>
