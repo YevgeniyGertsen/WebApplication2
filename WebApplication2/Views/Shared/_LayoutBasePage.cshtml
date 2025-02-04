@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home Page || Hotel ATR</title>
-    <meta name="description" content="">
+    <title>@ViewData["Title"] || Hotel ATR</title>
+    <meta name="description" content="@ViewData["Description"]">
+    <meta name="keywords" content="@ViewData["Keywords"]">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon Icon -->
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="~/css/shortcode/shortcodes.css">
     <link rel="stylesheet" href="~/style.css">
     <link rel="stylesheet" href="~/css/responsive.css">
+    @RenderSection("Styles", false)
     <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
@@ -212,6 +214,7 @@
     <script src="~/js/imagesloaded.pkgd.min.js"></script>
     <script src="~/js/jquery.magnific-popup.js"></script>
     <script src="~/js/plugins.js"></script>
+    @RenderSection("Scripts", false)
     <script src="~/js/main.js"></script>
 </body>
 </html>
