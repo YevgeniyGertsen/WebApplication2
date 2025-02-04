@@ -13,7 +13,24 @@
                 </div>
             </div>
      */
+    public enum PictireSize { small, big}
+
     public class EventModel
     {
+        public int Id { get; set; }
+
+        //<img src="img/event/5.jpg" alt="">
+        public string EventImgPath { get; set; }
+
+        public PictireSize PictireSize { get; set; }
+
+        // <h3 class="event-title">management conferences</h3>
+        public string EventTitle { get; set; }
+
+        //<h3 class="author-name">By : Dan Brown</h3>
+        public string AuthorName { get; set; }
+
+        public string Description { get; set; }
+
     }
 }

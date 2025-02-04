@@ -1,12 +1,13 @@
-﻿@{
+﻿@model List<EventModel>
+@{
     ViewData["Title"] = "Events";
     ViewData["Description"] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     ViewData["Keywords"] = "lorem, ipsum, dolor, sit, amet";
 
     ViewData["PageName"] = "Events";
     ViewData["PageDescription"] = "A quality room of hotel ATR with sea or mountain view";
+    string classForEvent = "";
 }
-
 <!-- Event Area Start -->
 <section class="event-area pt-90">
     <div class="container">
@@ -33,19 +34,30 @@
             </div>
         </div>
         <div class="row event-items">
-            <div class="single-event col-md-8 col-sm-8 col-xs-12 conference">
-                <div class="single-event-item">
-                    <img src="img/event/1.jpg" alt="">
-                    <div class="event-text">
-                        <h3 class="event-title">management conferences</h3>
-                        <h3 class="author-name">By : Jhtyg Hyuir</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+            @foreach (EventModel eventItem in Model)
+            {
+                if (eventItem.PictireSize == PictireSize.big)
+                {
+                    classForEvent = " col-md-8 col-sm-8 col-xs-12 ";
+                }
+                else
+                {
+                    classForEvent = " col-md-4 small col-sm-4 col-xs-12 ";
+                }
+                <div class="single-event @classForEvent conference">
+                    <div class="single-event-item">
+                        <img src="@Url.Content(eventItem.EventImgPath)" alt="">
+                        <div class="event-text">
+                            <h3 class="event-title">@eventItem.EventTitle</h3>
+                            <h3 class="author-name">@eventItem.AuthorName</h3>
+                            <p>@eventItem.Description</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
             <div class="single-event col-md-4 small col-sm-4 col-xs-12 music">
                 <div class="single-event-item">
-                    <img src="img/event/2.jpg" alt="">
+                    <img src="~/img/event/2.jpg" alt="">
                     <div class="event-text">
                         <h3 class="event-title">Music Concert</h3>
                         <h3 class="author-name">By : Jhon Doe</h3>
@@ -55,7 +67,7 @@
             </div>
             <div class="single-event col-md-4 small col-sm-4 col-xs-12 birthday">
                 <div class="single-event-item">
-                    <img src="img/event/3.jpg" alt="">
+                    <img src="~/img/event/3.jpg" alt="">
                     <div class="event-text">
                         <h3 class="event-title">birthday party</h3>
                         <h3 class="author-name">By : Marry Luis</h3>
@@ -65,7 +77,7 @@
             </div>
             <div class="single-event col-md-8 col-sm-8 col-xs-12 wedding">
                 <div class="single-event-item">
-                    <img src="img/event/4.jpg" alt="">
+                    <img src="~/img/event/4.jpg" alt="">
                     <div class="event-text">
                         <h3 class="event-title">weeding party </h3>
                         <h3 class="author-name">By : Kathy Luis</h3>
@@ -75,7 +87,7 @@
             </div>
             <div class="single-event col-md-8 col-sm-8 col-xs-12 photography">
                 <div class="single-event-item">
-                    <img src="img/event/5.jpg" alt="">
+                    <img src="~/img/event/5.jpg" alt="">
                     <div class="event-text">
                         <h3 class="event-title">management conferences</h3>
                         <h3 class="author-name">By : Dan Brown</h3>
@@ -85,7 +97,7 @@
             </div>
             <div class="single-event col-md-4 small col-sm-4 col-xs-12 photography">
                 <div class="single-event-item">
-                    <img src="img/event/6.jpg" alt="">
+                    <img src="~/img/event/6.jpg" alt="">
                     <div class="event-text">
                         <h3 class="event-title">photography</h3>
                         <h3 class="author-name">By : Khaled Hossaini</h3>
