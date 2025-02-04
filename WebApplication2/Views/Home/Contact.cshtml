@@ -1,9 +1,12 @@
-﻿@{
+﻿@model Message
+@{
     ViewData["Title"] = "Contact";
     ViewData["Description"] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     ViewData["Keywords"] = "lorem, ipsum, dolor, sit, amet";
-}
 
+    ViewData["PageName"] = "Contact";
+    ViewData["PageDescription"] = "A quality room of hotel ATR with sea or mountain view";
+}
 
 <!-- Google Map Area Start -->
 <div class="google-map-area">
@@ -46,10 +49,15 @@
                       method="post">
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" name="name" placeholder="Enter Name">
+                            <input type="text" name="name" 
+                                
+                                placeholder="Enter Name">
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="email" placeholder="Enter Email">
+                            <input type="email" 
+                                name="email"
+                                   value="@Model.email"
+                                   placeholder="Enter Email">
                         </div>
                         <div class="col-md-12">
                             <textarea name="message" cols="30" rows="10" placeholder="Message here"></textarea>

@@ -20,7 +20,12 @@ namespace WebApplication2.Controllers
 
         public IActionResult Contact()
         {
-            return View();
+            Message message = new Message();
+            message.email = "ok@ok.kz";
+
+            //ViewBag.Test = "send your massage";
+
+            return View(message);
         }
 
         [HttpPost]
