@@ -1,4 +1,8 @@
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
 using WebApplication2.Models;
 
@@ -7,9 +11,11 @@ namespace WebApplication2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IValidator<Message> _validator;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IValidator<Message> validator)
         {
+            _validator = validator;
             _logger = logger;
         }
 
@@ -20,23 +26,29 @@ namespace WebApplication2.Controllers
 
         public IActionResult Contact()
         {
-            Message message = new Message();
-            message.email = "ok@ok.kz";
-
-            //ViewBag.Test = "send your massage";
-
-            return View(message);
+            return View();
         }
 
         [HttpPost]
-        //public IActionResult SendMessage(string name, string email, string message)
-        public IActionResult SendMessage(Message userMessage)
+        public IActionResult Contact(Message userMessage)
         {
-            var data = Request.Form;
-            ///TODO write to db
+            MessageValidator rules = new MessageValidator();
+            var result = rules.Validate(userMessage);
+            var errors = result.Errors;
 
-            return View();
+            if (result.IsValid)
+                return RedirectToAction("SendMessage");
+            else
+                return View(userMessage);
+
+            //if (ModelState.IsValid)
+            //    return RedirectToAction("SendMessage"); 
+            //else
+            //    return View(userMessage);
         }
+
+
+
 
         [HttpPost]
         public IActionResult NewsLetterSignUp(string email)

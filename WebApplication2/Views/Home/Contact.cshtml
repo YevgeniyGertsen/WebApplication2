@@ -45,27 +45,41 @@
                 <h4 class="contact-title">send your massage</h4>
                 <form id="contact-form"
                       asp-controller="home"
-                      asp-action="SendMessage"
+                      asp-action="contact"
                       method="post">
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" name="name" 
-                                
-                                placeholder="Enter Name">
+                            <input type="text" asp-for="name"
+                                   placeholder="Enter Name">
+                            <span asp-validation-for="name" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" 
-                                name="email"
-                                   value="@Model.email"
+                            <input type="text"
+                                   asp-for="email"
                                    placeholder="Enter Email">
                         </div>
+                        <div class="col-md-6">
+                            <input type="text" asp-for="DOB"
+                                   asp-format="{0:d}"
+                                   placeholder="Enter DOB">
+                            <span asp-validation-for="DOB" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" asp-for="City"
+                                   placeholder="Enter City">
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
                         <div class="col-md-12">
-                            <textarea name="message" cols="30" rows="10" placeholder="Message here"></textarea>
+                            <textarea asp-for="message"
+                                      cols="30" rows="10"
+                                      placeholder="Message here"></textarea>
                             <button type="submit" class="default-btn">SUBMIT</button>
                         </div>
                     </div>
                 </form>
-                <p class="form-messege"></p>
+                @* <p class="form-messege"> </p>*@
+                <div asp-validation-summary="All" class="text-danger form-messege"></div>
+
             </div>
         </div>
     </div>
@@ -121,7 +135,6 @@
     </div>
 </div>
 <!-- Client Area End -->
-
 @Html.Partial("Newsletter")
 
 @section Scripts
