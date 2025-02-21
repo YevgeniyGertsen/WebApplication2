@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
     public class EventController : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
             List<EventModel> events = new List<EventModel>();
